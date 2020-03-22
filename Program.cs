@@ -1,5 +1,6 @@
 ﻿using System;
 using static System.Console;
+using System.Collections.Generic;
 using System.Linq;
 public class Person
 {
@@ -32,30 +33,30 @@ public class Program
     //     var average = wordLength.Average();
     //     WriteLine($"{average:F3}");
     // }
-    public static void Main()
-    {
-        string s = "nullss";
-        WriteLine(s?.Length);
-        WriteLine("end");
+    // public static void Main()
+    // {
+    //     string s = "nullss";
+    //     WriteLine(s?.Length);
+    //     WriteLine("end");
 
-        char? c = s?[0];
-        WriteLine(c.HasValue);
+    //     char? c = s?[0];
+    //     WriteLine(c.HasValue);
 
-        bool hasMore = s?.ToCharArray()?.GetEnumerator()?.MoveNext() ?? false;
-        WriteLine(hasMore);
+    //     bool hasMore = s?.ToCharArray()?.GetEnumerator()?.MoveNext() ?? false;
+    //     WriteLine(hasMore);
 
-        try
-        {
-            string a = null;
-            WriteLine(a.Length);
-        }
-        catch (Exception e) when (LogExeption(e))
-        {
+    //     try
+    //     {
+    //         string a = null;
+    //         WriteLine(a.Length);
+    //     }
+    //     catch (Exception e) when (LogExeption(e))
+    //     {
 
-        }
-        WriteLine("this is end");
+    //     }
+    //     WriteLine("this is end");
 
-    }
+    // }
 
     private static bool LogExeption(Exception e)
     {
@@ -63,4 +64,27 @@ public class Program
         WriteLine($"\t Message:{e.Message}");
         return true;
     }
+
+
+    // public static void Main()
+    // {
+    //     WriteLine(nameof(System.String));
+    //     int j = 5;
+    //     WriteLine(nameof(j));
+
+    //     var names = new List<string>();
+    //     WriteLine(nameof(names));
+    // }
+    public static void Main()
+    {
+        var msg = new Dictionary<int, string>
+        {
+            [404] = "page not found",
+            [302] = "page moved",
+            [500] = "server error"
+        };
+
+        WriteLine(msg[302]);
+    }
+
 }
