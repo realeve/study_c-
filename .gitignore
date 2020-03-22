@@ -1,0 +1,7 @@
+debug
+debug
+*.dll
+*.exe
+*.pdb
+*.json
+*.cache
