@@ -1,4 +1,6 @@
-﻿using static System.Console;
+﻿using System;
+using static System.Console;
+using System.Linq;
 public class Person
 {
     public string strFirst { get; }
@@ -17,10 +19,48 @@ public class Person
 
 public class Program
 {
+    // public static void Main()
+    // {
+    //     var p = new Person("li", "bin");
+    //     WriteLine($"username:{p.AllCaps()}");
+    //     WriteLine($"user:{p}");
+
+
+    //     var phrase = "the quick brown fox jumps over the lazy dog";
+
+    //     var wordLength = from word in phrase.Split(' ') select word.Length;
+    //     var average = wordLength.Average();
+    //     WriteLine($"{average:F3}");
+    // }
     public static void Main()
     {
-        var p = new Person("li", "bin");
-        WriteLine("username:" + p.AllCaps());
-        WriteLine("user:" + p);
+        string s = "nullss";
+        WriteLine(s?.Length);
+        WriteLine("end");
+
+        char? c = s?[0];
+        WriteLine(c.HasValue);
+
+        bool hasMore = s?.ToCharArray()?.GetEnumerator()?.MoveNext() ?? false;
+        WriteLine(hasMore);
+
+        try
+        {
+            string a = null;
+            WriteLine(a.Length);
+        }
+        catch (Exception e) when (LogExeption(e))
+        {
+
+        }
+        WriteLine("this is end");
+
+    }
+
+    private static bool LogExeption(Exception e)
+    {
+        WriteLine($"\t in the log routine,caught {e.GetType()}");
+        WriteLine($"\t Message:{e.Message}");
+        return true;
     }
 }

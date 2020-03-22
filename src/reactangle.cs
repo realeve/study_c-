@@ -23,7 +23,7 @@ namespace RectangleApplication
     }
     class ExecuteRectangle
     {
-        static void Main(string[] args)
+        static void test(string[] args)
         {
             Rectangle r = new Rectangle();
             r.Acceptdetails();
